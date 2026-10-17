@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>QLarx AI</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#"><span class="logo">✳</span> QLarx AI<span class="accent">.</span></a>
+    <nav><a href="#solver">Решить задание</a><a href="#subjects">Предметы</a><a href="#about">О проекте</a></nav>
+    <span class="top-pill">Готовые ДЗ ✦</span>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div>
+        <span class="eyebrow">✦ Твой помощник для выполнения ДЗ</span>
+        <h1>Сложное задание?<br><span class="accent">Реши с QLarx Ai.</span></h1>
+        <p class="lead">Введи условие — получи понятное объяснение и пошаговые подсказки, чтобы разобраться самому.</p>
+        <div class="trust"><span>Пошаговые решения</span><span>Простой язык</span><span>Альфа-режим</span></div>
+      </div>
+      <div class="preview">
+        <div class="preview-card">
+          <div class="mini-label">Пример решения · алгебра</div>
+          <div class="equation">2x + 6 = 18</div>
+          <div class="step"><b>1</b><span>Вычтем 6: 2x = 12</span></div>
+          <div class="step"><b>2</b><span>Разделим на 2: x = 6</span></div>
+          <div class="answer">✓ Ответ: x = 6</div>
+        </div>
+        <span class="spark">✳</span>
+      </div>
+    </section>
+
+    <section class="workspace" id="solver">
+      <div class="panel">
+        <div class="panel-head"><div><h2>Решить задание</h2><p class="muted">Вставь условие в поле ниже.</p></div><span class="top-pill">01 / Ввод</span></div>
+        <label for="subject">Предмет</label>
+        <select id="subject">
+          <option value="auto">Определить автоматически</option>
+          <option value="math">Математика</option>
+          <option value="physics">Физика</option>
+          <option value="russian">Русский язык</option>
+          <option value="english">Английский язык</option>
+          <option value="other">Другой предмет</option>
+        </select>
+        <label for="task">Условие задания</label>
+        <textarea id="task" placeholder="Например: Реши уравнение 3x - 9 = 12"></textarea>
+        <label for="photo">Фото задания (необязательно)</label>
+        <div class="upload"><input id="photo" type="file" accept="image/*"><span class="muted small">В этой демо-версии фото не распознаётся автоматически.</span></div>
+        <div class="actions"><button class="btn" id="solve">Разобрать задание ↗</button><button class="btn secondary" id="clear">Очистить</button></div>
+        <p class="fine">Альфа-версия решает простые арифметические выражения и линейные уравнения локально в браузере.</p>
+        <div class="result" id="result" aria-live="polite"><h3 id="resultTitle">Решение</h3><p id="resultText"></p></div>
+      </div>
+      <aside class="sidebar">
+        <div class="panel" id="subjects">
+          <h3>С чем поможет QLarx AI?</h3>
+          <div class="subject-row"><span class="subject-icon purple">∑</span><div><b>Математика</b><small>Примеры и уравнения</small></div></div>
+          <div class="subject-row"><span class="subject-icon green">⚛</span><div><b>Физика</b><small>Формулы и подсказки</small></div></div>
+          <div class="subject-row"><span class="subject-icon orange">Аа</span><div><b>Русский язык</b><small>Грамматика и тексты</small></div></div>
+          <div class="subject-row"><span class="subject-icon blue">文</span><div><b>Английский язык</b><small>Перевод и правила</small></div></div>
+        </div>
+        <div class="tip" id="about"><h3>💡 Альфа</h3><p>Внимание! Сайт находится в Альфа-версии</p></div>
+      </aside>
+    </section>
+  </main>
+  <footer><span>© 2026 QLarx AI — учебный помощник</span><span>Альфа-сайт · данные не отправляются на сервер</span></footer>
+</body>
+</html>
