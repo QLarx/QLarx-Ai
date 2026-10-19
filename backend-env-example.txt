@@ -1,0 +1,7 @@
+# Никогда не публикуйте настоящий ключ в GitHub.
+OPENAI_API_KEY=your_api_key_here
+OPENAI_MODEL=gpt-4.1-mini
+PORT=3000
+# Через запятую укажите точные origin опубликованного сайта.
+# Например: https://qlarx.github.io
+ALLOWED_ORIGINS=https://qlarx.github.io

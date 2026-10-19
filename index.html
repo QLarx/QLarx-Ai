@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#090b16">
+  <meta name="description" content="QLarx AI — умный помощник для учёбы. Разбирайся в задачах шаг за шагом.">
+  <title>QLarx AI — учись умнее</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="ambient ambient-one"></div><div class="ambient ambient-two"></div>
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar">
+      <a class="brand" href="#" aria-label="QLarx AI — главная">
+        <span class="brand-mark"><svg viewBox="0 0 40 40" aria-hidden="true"><path d="M20 3.5 35 12v16L20 36.5 5 28V12Z" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="m13 13 14 14M27 13 13 27" stroke="currentColor" stroke-width="3" stroke-linecap="round"/><circle cx="20" cy="20" r="3.2" fill="currentColor"/></svg></span>
+        <span class="brand-name">QLarx <b>AI</b><small>YOUR STUDY SPACE</small></span>
+      </a>
+      <button class="new-chat" id="newChat"><span>＋</span> Новое решение</button>
+      <div class="side-label">ТВОЙ ПРОСТРАНСТВО</div>
+      <button class="nav-item active" id="homeNav"><span class="nav-icon">⌂</span> Решатель задач</button>
+      <button class="nav-item" id="historyNav"><span class="nav-icon">◷</span> История <span class="nav-count" id="historyCount">0</span></button>
+      <div class="sidebar-bottom">
+        <div class="tip-card"><span class="tip-spark">✦</span><strong>Учись понимать</strong><p>Не просто ответ — разбор, который помогает разобраться.</p></div>
+        <div class="profile-row"><div class="avatar">Q</div><div><strong>Ученик</strong><small>QLarx AI 2.0</small></div><span class="status-dot"></span></div>
+      </div>
+    </aside>
+
+    <main class="main-area">
+      <header class="topbar">
+        <button class="mobile-menu" id="mobileMenu" aria-label="Открыть меню">☰</button>
+        <div class="breadcrumb">Рабочее пространство <span>/</span> <b>Решатель задач</b></div>
+        <div class="top-actions"><span class="online-pill"><i></i> AI-помощник</span><button class="icon-button" id="themeHint" title="QLarx AI 2.0">✦</button></div>
+      </header>
+
+      <section class="workspace" id="workspace">
+        <div class="hero">
+          <div class="eyebrow"><span class="eyebrow-dot"></span> ТВОЙ УМНЫЙ ПОМОЩНИК</div>
+          <h1>Привет! Давай <span>разберёмся.</span></h1>
+          <p class="hero-copy">Сложная задача — это просто несколько понятных шагов.<br class="desktop-break"> Напиши, что нужно решить, и начнём.</p>
+          <div class="hero-orb" aria-hidden="true"><div class="orb-ring ring-a"></div><div class="orb-ring ring-b"></div><div class="orb-core">Q<span>✦</span></div><div class="orb-dot dot-a"></div><div class="orb-dot dot-b"></div><div class="orb-dot dot-c"></div></div>
+        </div>
+
+        <div class="subject-row" aria-label="Выбери предмет">
+          <button class="subject-chip selected" data-subject="Общий вопрос"><span>✦</span> Все предметы</button>
+          <button class="subject-chip" data-subject="Математика"><span>∑</span> Математика</button>
+          <button class="subject-chip" data-subject="Физика"><span>⚛</span> Физика</button>
+          <button class="subject-chip" data-subject="Химия"><span>⚗</span> Химия</button>
+          <button class="subject-chip" data-subject="Русский язык"><span>Аа</span> Русский</button>
+          <button class="subject-chip" data-subject="Английский язык"><span>文</span> Английский</button>
+        </div>
+
+        <section class="composer-card">
+          <div class="composer-top"><span class="composer-label"><span class="tiny-spark">✧</span> ТВОЁ ЗАДАНИЕ</span><span class="secure-label"><span>⌑</span> Приватный запрос</span></div>
+          <textarea id="prompt" rows="4" maxlength="8000" placeholder="Например: Реши уравнение 3x + 7 = 22 и объясни каждый шаг..."></textarea>
+          <div class="composer-footer">
+            <div class="composer-options"><label class="select-wrap"><span>Класс</span><select id="grade"><option value="не указан">Не указан</option><option>5</option><option>6</option><option>7</option><option>8</option><option>9</option><option>10</option><option>11</option><option>Колледж / вуз</option></select></label><label class="check-option"><input type="checkbox" id="explain" checked><span class="fake-check">✓</span> Объяснить по шагам</label></div>
+            <button class="solve-button" id="solveButton"><span class="button-star">✦</span> Решить задачу <span class="button-arrow">↗</span></button>
+          </div>
+          <div class="error-message" id="errorMessage" role="alert" hidden></div>
+        </section>
+
+        <div class="quick-heading"><span>✧</span> ИЛИ НАЧНИ С ПРИМЕРА</div>
+        <div class="examples-grid">
+          <button class="example-card" data-prompt="Реши уравнение 3x + 7 = 22. Объясни каждый шаг."><span class="example-icon math-icon">∑</span><span><strong>Решить уравнение</strong><small>3x + 7 = 22</small></span><span class="example-arrow">↗</span></button>
+          <button class="example-card" data-prompt="Объясни закон сохранения энергии простыми словами и приведи пример из жизни."><span class="example-icon physics-icon">⌁</span><span><strong>Объяснить тему</strong><small>Закон сохранения энергии</small></span><span class="example-arrow">↗</span></button>
+          <button class="example-card" data-prompt="Проверь орфографию и пунктуацию: «Когда я пришёл домой я сразу начал делать уроки». Объясни исправления."><span class="example-icon lang-icon">Aa</span><span><strong>Проверить текст</strong><small>Орфография и пунктуация</small></span><span class="example-arrow">↗</span></button>
+        </div>
+        <footer class="page-footer"><span>© 2026 QLarx AI</span><span>Создано для понимания, а не только ответов <b>✦</b></span><span class="footer-version">VERSION 2.0</span></footer>
+      </section>
+
+      <section class="result-view" id="resultView" hidden>
+        <div class="result-header"><div><div class="eyebrow"><span class="eyebrow-dot"></span> РАЗБОР ЗАДАЧИ</div><h2>Вот что получилось</h2><p id="resultMeta">QLarx AI подготовил объяснение</p></div><button class="secondary-button" id="backButton">← Новая задача</button></div>
+        <div class="question-panel"><span class="panel-label">ТВОЙ ВОПРОС</span><p id="questionText"></p></div>
+        <article class="answer-panel"><div class="answer-top"><div class="answer-brand"><span class="mini-mark">Q</span><div><strong>QLarx AI</strong><small>Объяснение сгенерировано ИИ</small></div></div><button class="copy-button" id="copyButton">▢ Копировать</button></div><div id="answerText" class="answer-content"></div><div class="answer-disclaimer">✦ Проверь результат и убедись, что понял решение. ИИ может ошибаться.</div></article>
+      </section>
+
+      <section class="history-view" id="historyView" hidden><div class="result-header"><div><div class="eyebrow"><span class="eyebrow-dot"></span> ТВОИ ЗАПРОСЫ</div><h2>История решений</h2><p>Запросы хранятся локально в этом браузере.</p></div><button class="secondary-button" id="clearHistory">Очистить историю</button></div><div class="history-list" id="historyList"></div></section>
+    </main>
+  </div>
+  <div class="toast" id="toast" role="status"></div>
+  <script src="config.js"></script><script src="app.js"></script>
+</body>
+</html>
